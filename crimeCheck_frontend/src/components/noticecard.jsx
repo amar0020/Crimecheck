@@ -2,7 +2,7 @@ export const NoticeCard = ({ele})=>{
 
     return (
         <div className="allNotice">
-            <div>
+            <div className="noticewidth">
                 <p>{ele.notices}</p>
             </div>
             <div className="userdate">

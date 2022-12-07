@@ -71,7 +71,8 @@
   margin: auto;
 }
 .allNotice{
-  box-shadow: 10px 5px 5px gainsboro;;
+  box-shadow: 10px 5px 5px gainsboro;
+  width: 500px;
 }
 
 .userdate{
@@ -80,4 +81,7 @@
 }
 .userdate>p{
   margin: 7px;
+}
+.all{
+  max-width: 500px;
 }

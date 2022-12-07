@@ -58,7 +58,7 @@ export const Notice = ()=>{
             <button onClick={handleSubmit} className="post">Post</button>
         </div>
 
-        <div>
+        <div className="all">
             {data?.map((ele)=><NoticeCard key={ele._id} ele={ele}></NoticeCard>)}
         </div>
     </div>
