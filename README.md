@@ -1,6 +1,6 @@
 # Crimecheck
 
-To run server: npm run dev
+<b>To run server</b>: npm run dev
 
 In this i have made api for the for the following:
 
@@ -10,7 +10,7 @@ In this i have made api for the for the following:
 
 "/user" : To create new user
 
-Tech Stack:
+<b>Tech Stack</b>:
 
 MongoDB
 ExpressJS
