@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { URL } from "../config"
+import { NoticeCard } from "../components/noticecard"
 
 export const Notice = ()=>{
     const ref = useRef()
@@ -6,10 +8,10 @@ export const Notice = ()=>{
     const [data,setData] = useState([])
 
     const fetchAllNotice = ()=>{
-        fetch("http://localhost:8000/all").then((r)=>r.json())
+        return fetch(`${URL}/all`).then((r)=>r.json())
         .then((r)=>{
             console.log(r)
-            setData(r.data)
+            return r
         })
     }
 
@@ -22,7 +24,7 @@ export const Notice = ()=>{
             const body = JSON.stringify({
                 notice:ref.current.value
             })
-            fetch("http://localhost:8000/post",{
+            fetch(`${URL}/post`,{
                 method:"POST",
                 body:body,
                 headers:{
@@ -33,14 +35,19 @@ export const Notice = ()=>{
             }).then((r)=>r.json())
             .then((r)=>{
                 console.log(r)
-                fetchAllNotice()
+                fetchAllNotice().then((r)=>setData(r))
+            }).catch((err)=>{
+                alert("not authorize")
             })
+        }
+        else {
+            alert("Type atleast 100 character")
         }
     }
 
     useEffect(()=>{
-        fetchAllNotice()
-    },[data])
+        fetchAllNotice().then((r)=>setData(r))
+    },[])
     return <div>
         <h2>Notice Board</h2>
         <div className="noticearea">
@@ -49,6 +56,10 @@ export const Notice = ()=>{
                 <textarea ref={ref} name="" id="" cols="30" rows="3"></textarea>
             </div>
             <button onClick={handleSubmit} className="post">Post</button>
+        </div>
+
+        <div>
+            {data?.map((ele)=><NoticeCard key={ele._id} ele={ele}></NoticeCard>)}
         </div>
     </div>
 }

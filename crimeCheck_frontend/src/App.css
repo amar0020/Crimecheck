@@ -67,4 +67,17 @@
 .post{
   background-color: black;
   color: azure;
+  width: 150px;
+  margin: auto;
+}
+.allNotice{
+  box-shadow: 10px 5px 5px gainsboro;;
+}
+
+.userdate{
+  display: flex;
+  justify-content: space-between;
+}
+.userdate>p{
+  margin: 7px;
 }

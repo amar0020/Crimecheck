@@ -12,7 +12,7 @@ export const User = ()=>{
         const body = JSON.stringify({
           user:ref.current.value
         })
-        fetch("http://localhost:8000/user",{
+        fetch(`${URL}/user`,{
           method:"POST",
           body:body,
           headers:{
