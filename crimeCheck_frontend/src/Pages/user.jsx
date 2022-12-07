@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { URL } from '../config'
 export const User = ()=>{
 
     const ref = useRef()
