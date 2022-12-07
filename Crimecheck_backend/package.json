@@ -1,4 +1,11 @@
-{
+{"name": "crimecheck-backend",
+"private": true,
+"version": "0.0.0",
+"type": "module",
+"main": "index.js",
+"engines": {
+  "node": "14.x"
+},
   "scripts": {
     "dev": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
